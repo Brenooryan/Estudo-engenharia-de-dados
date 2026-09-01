@@ -205,6 +205,56 @@ numeros.sort()
 print(f'Os números digitados em ordem crescente são: {numeros[0]}, {numeros[1]}, {numeros[2]}')
 ```
 
+## 🔢 Exercício — turnos
+
+- Aqui utilizei uma variavel resp para armazenar a `string()`.
+- Utilizei o `if()` para iniciar uma condição.
+- Usei o `in()` para verificar se a variável resp pertence a uma das condições.
+- Utilizei o `elif` adicionar mais condições ao código.
+
+```python
+resp = (input('Qual turno você esta?'))
+
+if resp in ('manha', 'Manha'):
+    print('Bom dia')
+elif resp in ('tarde', 'Tarde'):
+    print('Boa tarde')
+elif resp in ('noite', 'Noite'):
+    print('Boa noite')
+else:
+    print('Invalido!')
+```
+
+## 🔢 Exercício — Verifica numero par
+
+- Aqui utilizei uma variavel num para armazenar um `int()`.
+- Utilizei o `if()` para iniciar uma condição.
+- Usei o operador módulo `%` para criar um condição que quando o `num() / 2 der resto 0`, ele é par.
+
+```python
+num = int(input('Digite um número inteiro: '))
+
+if num % 2 == 0:
+    print('O número digitado é par.')
+else:
+    print('O número digitado é ímpar.')
+```
+
+## 🔢 Exercício — Verifica decimal
+
+- Aqui utilizei uma variavel num para armazenar um `float()`.
+- Utilizei o `if()` para iniciar uma condição.
+- Usei o operador módulo `%` para criar um condição que quando o `num / 1` e resto diferente `!=` de 0, ele é decimal.
+
+```python
+num = float(input('Digite um número: '))
+
+if num % 1 != 0:
+    print('O número digitado é decimal.')
+else:
+    print('O número digitado é inteiro.')
+```
+
 ## 💡 Conceitos que fixei
 
 - `and` exige as duas condições verdadeiras.
