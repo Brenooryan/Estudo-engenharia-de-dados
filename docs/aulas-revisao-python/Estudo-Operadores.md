@@ -1,5 +1,5 @@
 # Estudo — Operadores
-**Data:** DD/MM/AAAA
+**Data:** 01/09/2026
 
 **Projeto:** Python para Data Science — [Alura](https://www.alura.com.br/)
 
