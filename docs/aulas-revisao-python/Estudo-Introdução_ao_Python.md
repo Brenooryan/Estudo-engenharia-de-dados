@@ -1,34 +1,44 @@
-# 01 — Introdução ao Python
+# Estudo — Introdução ao Python
+**Data:** DD/MM/AAAA
 
-> Curso **Python para Data Science** — [Alura](https://www.alura.com.br/)
-
-Primeiro contato com a linguagem e com o ambiente de estudo, terminando no primeiro código executado.
+**Projeto:** Python para Data Science — [Alura](https://www.alura.com.br/)
 
 ---
 
-## Google Colaboratory
+## 🐍 Python — a linguagem de estudo
 
-O [Google Colaboratory](https://colab.research.google.com/) (Colab) é um ambiente de notebooks que roda no navegador, sem instalação de nada na máquina. O código é executado nos servidores do Google e o arquivo fica salvo no Google Drive.
+- Conheci o Python como a linguagem que vou usar na trilha de dados.
+- Entendi que ela é interpretada, ou seja, o código é executado linha por linha.
+- Fixei que não preciso declarar tipos: a própria linguagem identifica o tipo do dado.
+- Compreendi que a leitura do código é próxima do inglês comum, o que reduz a curva inicial.
 
-Um notebook é organizado em **células**, e existem dois tipos:
+## 🖥️ Google Colaboratory — ambiente de trabalho
 
-| Tipo | Para que serve |
-|---|---|
-| **Código** | Recebe comandos em Python e mostra o resultado logo abaixo da célula |
-| **Texto** | Recebe anotações escritas em Markdown (títulos, listas, links, negrito) |
+- Estudei o [Google Colaboratory](https://colab.research.google.com/) como ambiente de notebooks rodando no navegador.
+- Entendi que não preciso instalar nada na máquina, porque a execução acontece nos servidores do Google.
+- Fixei que o arquivo fica salvo no Google Drive e pode ser compartilhado como um documento.
+- Compreendi que o notebook é a ferramenta padrão em Data Science porque une código, resultado e explicação no mesmo arquivo.
 
-Isso é o que torna o notebook útil em Data Science: análise e explicação ficam no mesmo arquivo, na ordem em que o raciocínio acontece.
+## 🧱 Células — a unidade do notebook
 
-**O que testei na prática:**
+- Aprendi que o notebook é dividido em células independentes.
+- Entendi que a célula de código recebe comandos em Python e mostra o resultado logo abaixo.
+- Entendi que a célula de texto recebe anotações escritas em Markdown.
+- Testei criar, mover e apagar células dentro do notebook.
+- Fixei que `Shift + Enter` executa a célula e avança para a próxima.
 
-- criar células novas de código e de texto;
-- mover uma célula de posição dentro do notebook;
-- executar uma célula com `Shift + Enter` (executa e vai para a próxima) ou pelo botão de play;
-- reexecutar células fora de ordem — e perceber que a ordem de execução importa, porque o notebook guarda o estado do que já foi rodado.
+## ⚠️ Ordem de execução
 
-## Primeiro código: a função `print()`
+- Entendi que o notebook guarda o estado do que já foi executado.
+- Aprendi que posso rodar as células fora de ordem, mas isso muda o resultado.
+- Fixei que uma variável criada em uma célula continua existindo nas outras.
+- Compreendi que, se eu pular uma célula, a seguinte pode falhar por falta do dado anterior.
 
-A função [`print()`](https://docs.python.org/3/library/functions.html#print) exibe na tela o valor que for colocado entre parênteses.
+## 🖨️ `print()` — primeiro comando
+
+- Executei meu primeiro código em Python com a função [`print()`](https://docs.python.org/3/library/functions.html#print).
+- Entendi que ela exibe na tela o valor colocado entre parênteses.
+- Fixei que texto precisa estar entre aspas, simples ou duplas.
 
 ```python
 print("Hello Word")
@@ -38,11 +48,11 @@ print("Hello Word")
 Hello Word
 ```
 
-O texto precisa estar entre aspas (simples ou duplas). Sem aspas, o Python entenderia que é o nome de uma variável e devolveria um erro.
+- Entendi que, sem as aspas, o Python leria aquilo como nome de variável e devolveria erro.
 
-### Imprimindo números
+## 🔢 Imprimindo números
 
-Números **não** levam aspas:
+- Aprendi que número não leva aspas dentro do `print()`.
 
 ```python
 print(10)
@@ -52,11 +62,12 @@ print(10)
 10
 ```
 
-A diferença é importante: `10` é um número com o qual dá para fazer contas, e `"10"` seria um texto.
+- Fixei a diferença: `10` é um número que entra em contas, `"10"` é um texto.
 
-### Imprimindo vários valores de uma vez
+## ➕ Vários valores no mesmo `print()`
 
-O `print()` aceita mais de um valor, separados por vírgula. Ele exibe todos na mesma linha, inserindo automaticamente um espaço entre eles:
+- Aprendi que o `print()` aceita mais de um valor, separados por vírgula.
+- Entendi que ele exibe todos na mesma linha e insere um espaço automático entre eles.
 
 ```python
 print('Breno', 24)
@@ -66,19 +77,24 @@ print('Breno', 24)
 Breno 24
 ```
 
-Aqui foram misturados um texto e um número na mesma chamada, sem precisar converter nada.
+- Fixei que posso misturar texto e número na mesma chamada, sem converter nada.
 
----
+## 💡 Conceitos que fixei
 
-## O que ficou de aprendizado
-
-- Notebook é dividido em células independentes, e o resultado aparece logo abaixo de cada uma.
-- Célula de texto serve para documentar; célula de código serve para executar.
+- O notebook é dividido em células independentes.
+- Célula de código executa, célula de texto documenta.
+- A ordem de execução importa, porque o notebook guarda estado.
 - `print()` é a forma de mostrar informação na tela.
-- Texto vai entre aspas; número vai sem aspas.
-- Vírgula dentro do `print()` permite exibir vários valores de tipos diferentes de uma vez.
+- Texto vai entre aspas, número vai sem aspas.
+- A vírgula dentro do `print()` exibe vários valores de tipos diferentes.
 
-## Referências
+## 🧾 Resumo final
 
-- [Documentação oficial do Python](https://docs.python.org/3/)
-- [Função `print()`](https://docs.python.org/3/library/functions.html#print)
+Hoje entendi como funciona o ambiente onde vou estudar. O Colab organiza o trabalho em células, executa cada uma separadamente e mantém na memória tudo o que já foi rodado. Meu primeiro comando foi o `print()`, que exibe valores na tela e aceita texto, número ou vários valores de uma vez.
+
+## 🚧 Próximos passos
+
+- Estudar variáveis e como guardar valores na memória.
+- Entender as regras de nomenclatura de variáveis.
+- Conhecer os tipos básicos: `int`, `float`, `str` e `bool`.
+- Aprender a verificar o tipo de um dado com `type()`.

@@ -1,29 +1,27 @@
-# 05 — Coletando dados
+# Estudo — Coletando dados
+**Data:** DD/MM/AAAA
 
-> Curso **Python para Data Science** — [Alura](https://www.alura.com.br/)
-
-Recebendo informação de quem usa o programa, convertendo tipos e formatando a saída.
+**Projeto:** Python para Data Science — [Alura](https://www.alura.com.br/)
 
 ---
 
-## A função `input()`
+## ⌨️ A função `input()`
 
-Em algumas aplicações é preciso coletar valores da pessoa usuária. A função [`input()`](https://docs.python.org/3/library/functions.html#input) exibe uma mensagem, pausa a execução até que algo seja digitado e devolve o que foi escrito.
+- Estudei a função [`input()`](https://docs.python.org/3/library/functions.html#input) como forma de coletar valores da pessoa usuária.
+- Entendi que ela exibe uma mensagem, pausa a execução e espera algo ser digitado.
+- Fixei que o valor digitado precisa ser atribuído a uma variável para não se perder.
+- Compreendi que o texto dentro dos parênteses é opcional, mas é o que orienta quem está usando o programa.
 
 ```python
 nome = input('Escreva seu nome: ')
-nome
 ```
 
-```
-'Breno'
-```
+## 📝 O retorno é sempre uma string
 
-O texto dentro dos parênteses é opcional, mas é o que orienta a pessoa sobre o que digitar.
-
-## O retorno é sempre uma string
-
-Este é o ponto central do tema. Independentemente do que for digitado, o `input()` devolve uma `str`:
+- Este é o ponto central do tema.
+- Entendi que, independentemente do que for digitado, o `input()` devolve uma `str`.
+- Fixei que digitar `2023` guarda o texto `'2023'`, e não o número.
+- Confirmei isso usando `type()` sobre a variável coletada.
 
 ```python
 ano_entrada = input('Escreva o ano de ingresso do(a) estudante: ')
@@ -34,20 +32,18 @@ type(ano_entrada)
 <class 'str'>
 ```
 
-Ou seja, mesmo digitando `2023`, o valor guardado é o texto `'2023'`. Tentar fazer uma conta com ele resultaria em erro — ou, pior, em um comportamento silencioso e errado: `'2023' * 2` devolve `'20232023'`, porque multiplicar string repete o texto.
+## ⚠️ O risco de esquecer a conversão
 
-## Convertendo tipos
+- Entendi que tentar fazer conta com o texto pode gerar erro.
+- Percebi um caso pior: `'2023' * 2` devolve `'20232023'`, porque multiplicar string repete o texto.
+- Fixei que esse tipo de falha é silenciosa, já que o programa roda e entrega um resultado errado.
+- Compreendi que conferir o tipo antes de calcular evita esse problema.
 
-Para trabalhar com o dado como número, é preciso converter o resultado:
+## 🔄 Convertendo tipos
 
-| Função | Converte para | Exemplo |
-|---|---|---|
-| [`int()`](https://docs.python.org/3/library/functions.html#int) | Inteiro | `int('2023')` |
-| [`float()`](https://docs.python.org/3/library/functions.html#float) | Decimal | `float('8.45')` |
-| [`str()`](https://docs.python.org/3/library/functions.html#func-str) | Texto | `str(15)` |
-| [`bool()`](https://docs.python.org/3/library/functions.html#bool) | Booleano | `bool(1)` |
-
-A conversão pode ser feita já na coleta, envolvendo o `input()`:
+- Aprendi as funções de conversão: [`int()`](https://docs.python.org/3/library/functions.html#int), [`float()`](https://docs.python.org/3/library/functions.html#float), [`str()`](https://docs.python.org/3/library/functions.html#func-str) e [`bool()`](https://docs.python.org/3/library/functions.html#bool).
+- Entendi que posso envolver o `input()` na conversão, resolvendo tudo em uma linha.
+- Fixei o critério de escolha: ano de ingresso é `int`, nota e média pedem `float`.
 
 ```python
 ano_entrada = int(input('Escreva o ano de ingresso do(a) estudante: '))
@@ -58,28 +54,23 @@ type(ano_entrada)
 <class 'int'>
 ```
 
-Escolher entre `int()` e `float()` depende do dado: ano de ingresso é inteiro, nota e média pedem `float`, porque aceitam casas decimais.
+## 🖨️ Formatando a saída com f-strings
 
-## Formatando a saída com f-strings
-
-Para apresentar o resultado misturando texto e valores não textuais, usa-se a f-string: um `f` antes das aspas e as variáveis entre chaves `{}`.
+- Aprendi a apresentar o resultado misturando texto e valores não textuais.
+- Fixei a estrutura: um `f` antes das aspas e as variáveis entre chaves.
+- Entendi que dentro das chaves cabe qualquer expressão, não apenas o nome de uma variável.
+- Compreendi que a formatação de casas decimais também entra ali, como no `{media:.2f}`.
 
 ```python
 nota_entrada = float(input('Digite a nota do teste de ingresso: '))
 print(f'Ano de entrada: {ano_entrada} - nota do teste de ingresso: {nota_entrada}')
 ```
 
-```
-Ano de entrada: 2023 - nota do teste de ingresso: 8.5
-```
+## 🧮 Exercício — calculadora com operação escolhida
 
-Dentro das chaves é possível colocar qualquer expressão, não apenas o nome de uma variável — inclusive contas e formatação de casas decimais, como o `{media:.2f}` visto no tema anterior.
-
-## Exercícios feitos
-
-### Calculadora com operação escolhida
-
-Coleta de dois números e do sinal da operação, com o resultado saindo pelo condicional:
+- Coletei dois números e o sinal da operação.
+- Converti os números para `float` e deixei o sinal como texto.
+- Entendi que isso está correto, porque o sinal é um caractere e será comparado com `'+'`.
 
 ```python
 x = float(input('Digite um número: '))
@@ -90,11 +81,11 @@ if z == '+':
     print(x + y)
 ```
 
-Note que `x` e `y` foram convertidos para `float`, mas `z` permaneceu texto — é exatamente o que se quer, já que o sinal é um caractere e será comparado com `'+'`.
+## 🔠 Exercício — frase em maiúsculas
 
-### Frase em maiúsculas
-
-Junção do que foi visto em strings com a coleta de dados:
+- Juntei o que vi em strings com a coleta de dados.
+- Apliquei o `upper()` sobre a frase digitada e guardei o resultado.
+- Percebi que o `str()` ali é redundante, já que o `input()` devolve string, mas deixa o tipo explícito.
 
 ```python
 frase = str(input('Digite uma frase: '))
@@ -103,19 +94,21 @@ frase = frase.upper()
 print(frase)
 ```
 
-O `str()` aqui é redundante, já que o `input()` já devolve uma string — mas deixa explícito o tipo esperado.
+## 💡 Conceitos que fixei
 
----
-
-## O que ficou de aprendizado
-
-- `input()` sempre devolve `str`, mesmo quando o que se digita parece número.
-- A conversão pode envolver o `input()` na mesma linha: `float(input('...'))`.
-- `int()`, `float()`, `str()` e `bool()` fazem as conversões entre tipos.
-- `type()` é útil para conferir o que realmente está guardado antes de calcular.
+- `input()` sempre devolve `str`, mesmo quando o digitado parece número.
+- Esquecer a conversão pode gerar erro ou, pior, um resultado errado sem aviso.
+- A conversão pode envolver o `input()` na mesma linha.
+- `int()`, `float()`, `str()` e `bool()` fazem a conversão entre tipos.
+- `type()` confirma o que está realmente guardado antes do cálculo.
 - f-string mistura texto e variáveis de forma direta e legível.
 
-## Referências
+## 🧾 Resumo final
 
-- [Função `input()`](https://docs.python.org/3/library/functions.html#input)
-- [Formatted string literals](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
+Hoje aprendi a receber dados de quem usa o programa. O `input()` sempre entrega texto, então a conversão para o tipo certo é parte obrigatória da coleta, e não um detalhe. Também passei a usar f-strings para montar a saída, combinando texto e variáveis em uma única linha.
+
+## 🚧 Próximos passos
+
+- Estudar estruturas condicionais com `if` e `else`.
+- Entender o papel da indentação em Python.
+- Conhecer o `elif` para encadear várias condições.

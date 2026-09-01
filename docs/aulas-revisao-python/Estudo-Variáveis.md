@@ -1,14 +1,16 @@
-# 02 — Variáveis
+# Estudo — Variáveis
+**Data:** DD/MM/AAAA
 
-> Curso **Python para Data Science** — [Alura](https://www.alura.com.br/)
-
-Como guardar informações na memória para reutilizá-las depois — a base de qualquer análise de dados.
+**Projeto:** Python para Data Science — [Alura](https://www.alura.com.br/)
 
 ---
 
-## Criando uma variável
+## 📦 Variáveis — guardando informação
 
-Uma variável é criada no momento em que um valor é atribuído a ela. A estrutura é: nome da variável, sinal de igual (`=`) e o valor.
+- Entendi que variável é um nome que aponta para um valor guardado na memória.
+- Aprendi que ela é criada no momento em que recebe um valor, sem declaração prévia.
+- Fixei a estrutura: nome da variável, sinal de igual e o valor.
+- Compreendi que trabalhar com variáveis é essencial em Data Science, porque lido com muitos dados ao mesmo tempo.
 
 ```python
 idade = 5
@@ -19,11 +21,17 @@ print(idade)
 5
 ```
 
-O sinal `=` aqui **não** significa igualdade matemática: ele é o operador de atribuição, que guarda o valor da direita no nome da esquerda.
+## 🟰 O sinal de igual
 
-### Reatribuição
+- Entendi que o `=` não significa igualdade matemática.
+- Fixei que ele é o operador de atribuição: guarda o valor da direita no nome da esquerda.
+- Aprendi que a leitura correta é "recebe", e não "é igual a".
 
-O valor de uma variável pode ser trocado a qualquer momento. O valor antigo simplesmente deixa de existir:
+## 🔁 Reatribuição
+
+- Aprendi que o valor de uma variável pode ser trocado a qualquer momento.
+- Entendi que o valor antigo simplesmente deixa de existir.
+- Fixei que a variável sempre guarda apenas o último valor atribuído.
 
 ```python
 idade = 10
@@ -34,30 +42,25 @@ print(idade)
 10
 ```
 
-### Exibir com `print()` ou só com o nome
+## 👀 Exibir o valor
 
-Dentro de um notebook, escrever apenas o nome da variável na última linha da célula já mostra o valor:
+- Aprendi que, no notebook, escrever só o nome da variável já mostra o valor.
+- Entendi que isso funciona apenas na última linha da célula.
+- Fixei que o `print()` funciona em qualquer posição, inclusive dentro de condicionais e laços.
 
-```python
-idade = 15
-idade
-```
+## 🚫 Nomes que não posso usar
 
-```
-15
-```
+- Aprendi que o nome não pode começar com número, como `10_notas`.
+- Aprendi que o nome não pode ter espaço, como `Nome escola`.
+- Entendi que usar nomes de funções do Python, como `print` ou `type`, quebra a função original.
+- Fixei que o padrão adotado é `snake_case`: tudo minúsculo com underline separando as palavras.
+- Compreendi que nome descritivo é o que mantém o código legível: `media_aluno` diz muito mais que `m`.
 
-A diferença é que isso só funciona para a **última** linha de uma célula. O `print()` funciona em qualquer lugar, inclusive dentro de laços e condicionais.
+## 🔠 Maiúsculas e minúsculas
 
-## Regras para nomear variáveis
-
-Nomes que **não** podem ser usados:
-
-- **Começar com número** — `10_notas`, `2_nomes_casa`
-- **Ter espaço no meio** — `Nome escola`, `notas estudantes` (o certo é `nome_escola`)
-- **Usar nomes de funções do Python** — `print`, `type` (funciona, mas quebra a função original)
-
-Além disso, o Python diferencia maiúsculas de minúsculas. Cada um destes nomes é uma variável **diferente**:
+- Entendi que o Python diferencia maiúsculas de minúsculas nos nomes.
+- Fixei que `idade`, `Idade` e `IDADE` são três variáveis diferentes.
+- Aprendi que o underline também pode compor nomes válidos, como `_idade` e `_idade_`.
 
 ```python
 idade = 1
@@ -72,44 +75,34 @@ print(idade, Idade, IDADE, _idade, _idade_)
 1 2 3 4 5
 ```
 
-Na prática, o padrão adotado é `snake_case`: tudo minúsculo com underline separando as palavras (`media_aluno`, `total_funcionarios`). Nome bom é nome que descreve o conteúdo — `m` não diz nada, `media_aluno` diz.
+## 🏷️ Tipos de variáveis
 
-## Tipos de variáveis
-
-Cada valor guardado pertence a uma classe, que depende do tipo de dado atribuído. A função [`type()`](https://docs.python.org/3/library/functions.html#type) revela essa classe:
+- Entendi que cada variável pertence a uma classe, definida pelo tipo do dado atribuído.
+- Aprendi a consultar essa classe com a função [`type()`](https://docs.python.org/3/library/functions.html#type).
+- Fixei os quatro tipos básicos: `int`, `float`, `str` e `bool`.
+- Compreendi que `int` é número inteiro e `float` é número com casa decimal.
+- Fixei que decimal em Python usa **ponto**, não vírgula.
+- Entendi que booleano aceita apenas `True` ou `False`, com inicial maiúscula e sem aspas.
 
 ```python
 i = 5
-type(i)      # int   — número inteiro
+type(i)      # int
 
 f = 9.8
-type(f)      # float — número com casas decimais
+type(f)      # float
 
 s = "Breno"
-type(s)      # str   — texto (string)
+type(s)      # str
 ```
 
-Os quatro tipos básicos vistos:
+- Fixei um ponto de atenção: `8.45` é número e `'8.45'` é texto, e só o primeiro entra em uma conta.
 
-| Tipo | Classe | Exemplo | Observação |
-|---|---|---|---|
-| Inteiro | `int` | `15` | Números sem casa decimal |
-| Decimal | `float` | `8.45` | Usa **ponto**, não vírgula |
-| Texto | `str` | `'Fabricio'` | Sempre entre aspas |
-| Booleano | `bool` | `True` / `False` | Maiúscula na primeira letra, sem aspas |
+## 🧾 Aplicação — ficha do aluno em variáveis
 
-Ponto de atenção: `8.45` é um número, enquanto `'8.45'` é um texto. Parecem iguais na tela, mas só o primeiro entra em uma conta.
-
-## Aplicação: transformando uma ficha em variáveis
-
-Situação trabalhada — a ficha do aluno abaixo precisava virar código:
-
-- Nome: Fabricio Daniel
-- Idade: 15 anos
-- Média do semestre: 8,45
-- Situação de aprovação: verdadeira
-
-Cada informação vira uma variável do tipo correspondente:
+- Trabalhei a situação de transformar a ficha de um estudante em variáveis.
+- Entendi que cada informação da ficha vira uma variável do tipo correspondente.
+- Fixei que isso é o mesmo que acontece em um conjunto de dados: cada coluna tem seu tipo.
+- Compreendi que o tipo determina o que consigo fazer com aquele dado depois.
 
 ```python
 nome_aluno = "Fabricio Daniel"
@@ -124,38 +117,25 @@ print(nome_aluno, idade_aluno, media_aluno, situacao_aprovado)
 Fabricio Daniel 15 8.45 True
 ```
 
-É exatamente isso que acontece em um conjunto de dados: cada coluna tem seu tipo, e o tipo determina o que é possível fazer com a informação.
+- Refiz o exercício coletando a média digitada e decidindo a situação a partir dela, em vez de deixá-la fixa.
 
-### Versão com dado do usuário
+## 💡 Conceitos que fixei
 
-Depois refiz o exercício coletando a média digitada e decidindo a situação a partir dela, em vez de deixá-la fixa:
+- Variável é criada pela atribuição, sem declaração de tipo.
+- O `=` atribui um valor, não compara.
+- A variável guarda apenas o último valor recebido.
+- Nome não começa com número nem tem espaço.
+- Python diferencia maiúsculas de minúsculas.
+- O tipo é definido pelo dado e consultado com `type()`.
+- Decimal usa ponto; booleano é `True` ou `False`, sem aspas.
+- Número entre aspas vira texto e deixa de servir para cálculo.
 
-```python
-nome_aluno2 = 'Fabricio Daniel'
-idade_aluno2 = 15
-media_semestre = float(input("Digite a média do semestre: "))
-sit_aprov = True
+## 🧾 Resumo final
 
-if media_semestre >= 6:
-    sit_aprov = True
-else:
-    sit_aprov = False
+Hoje entendi que variável é o mecanismo básico para guardar e reutilizar informação. O tipo não é declarado por mim: ele vem do dado atribuído, e posso conferi-lo com `type()`. Também fixei as regras de nomenclatura e percebi, na prática da ficha do aluno, que transformar dados em variáveis com o tipo correto é o primeiro passo de qualquer análise.
 
-print(nome_aluno2, idade_aluno2, media_semestre,
-      'Aprovado' if sit_aprov else 'Reprovado')
-```
+## 🚧 Próximos passos
 
----
-
-## O que ficou de aprendizado
-
-- Variável é criada pela atribuição; não existe declaração de tipo antes.
-- O tipo é definido pelo dado atribuído e pode ser consultado com `type()`.
-- Python diferencia maiúsculas de minúsculas nos nomes.
-- Decimais usam ponto; booleanos são `True` e `False`, sem aspas.
-- Nome descritivo em `snake_case` é o que mantém o código legível.
-
-## Referências
-
-- [Função `type()`](https://docs.python.org/3/library/functions.html#type)
-- [Tipos built-in do Python](https://docs.python.org/3/library/stdtypes.html)
+- Estudar operações aritméticas com `int` e `float`.
+- Entender a diferença entre média simples e média ponderada.
+- Aprender a formatar casas decimais na exibição de resultados.

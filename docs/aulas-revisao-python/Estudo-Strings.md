@@ -1,14 +1,16 @@
-# 04 — Strings
+# Estudo — Strings
+**Data:** DD/MM/AAAA
 
-> Curso **Python para Data Science** — [Alura](https://www.alura.com.br/)
-
-Trabalhando com texto e usando métodos para tratar dados sujos antes de inseri-los em um sistema.
+**Projeto:** Python para Data Science — [Alura](https://www.alura.com.br/)
 
 ---
 
-## O que é uma string
+## 🔤 O que é uma string
 
-String é um conjunto de caracteres formando um texto. Ela é criada ao atribuir a uma variável um dado entre aspas simples (`'`) ou duplas (`"`) — as duas formas produzem exatamente o mesmo resultado:
+- Entendi que string é um conjunto de caracteres formando um texto.
+- Aprendi que ela é criada ao atribuir a uma variável um dado entre aspas.
+- Fixei que aspas simples e aspas duplas produzem exatamente o mesmo resultado.
+- Compreendi que a escolha entre elas é prática: uso aspas duplas quando o texto tem apóstrofo.
 
 ```python
 s1 = 'Alura'
@@ -23,95 +25,56 @@ Alura Alura
 <class 'str'> <class 'str'>
 ```
 
-A escolha entre um tipo de aspas e outro é prática: quando o texto contém um apóstrofo, usar aspas duplas evita conflito (`"L'Oréal"`).
+## 🛠️ Métodos
 
-## Métodos
+- Aprendi que método é uma função que pertence a um objeto e age sobre ele.
+- Fixei a estrutura de chamada: `objeto.metodo()`.
+- Entendi que existem métodos que não precisam dos parênteses.
+- Compreendi que preciso conferir a documentação de cada caso.
 
-Métodos são funções que pertencem a um objeto e agem sobre ele. A estrutura é:
+## 👩‍🏫 Situação — tratando um nome para cadastro
 
-```
-objeto.metodo()
-```
-
-Existem métodos que não precisam dos parênteses — é preciso conferir a documentação de cada caso.
-
-## Situação trabalhada
-
-Chegou o nome de uma professora para cadastro, mas com problemas: espaços sobrando nas pontas, letra trocada no sobrenome e caixa inconsistente.
+- Recebi o nome de uma professora com problemas: espaços sobrando nas pontas, letra trocada no sobrenome e caixa inconsistente.
+- Entendi que o texto precisava ser tratado antes de entrar no sistema.
+- O objetivo era chegar em `'GEOVANA ALESSANDRA DIAS SANTOS'`.
 
 ```python
 texto = '  Geovana Alessandra dias Sanyos '
 ```
 
-O objetivo era chegar em:
+## 🔡 `upper()` e `lower()`
 
-```
-'GEOVANA ALESSANDRA DIAS SANTOS'
-```
+- Aprendi que [`str.upper()`](https://docs.python.org/3/library/stdtypes.html#str.upper) converte a string para maiúsculas.
+- Aprendi que [`str.lower()`](https://docs.python.org/3/library/stdtypes.html#str.lower) converte para minúsculas.
+- Entendi que o `lower()` é muito usado para padronizar dados antes de comparar textos.
+- Fixei o motivo: para o Python, `'Ana'` e `'ana'` são diferentes.
 
-### [`str.upper()`](https://docs.python.org/3/library/stdtypes.html#str.upper)
+## ✂️ `strip()`
 
-Converte a string para maiúsculas.
+- Aprendi que [`str.strip()`](https://docs.python.org/3/library/stdtypes.html#str.strip) remove os espaços em branco do início e do fim da string.
+- Entendi que ele não mexe nos espaços entre as palavras.
+- Fixei que espaço invisível nas pontas é um problema comum em dado vindo de formulário.
 
-```python
-texto.upper()
-```
+## 🔁 `replace()`
 
-```
-'  GEOVANA ALESSANDRA DIAS SANYOS '
-```
+- Aprendi que [`str.replace(antigo, novo)`](https://docs.python.org/3/library/stdtypes.html#str.replace) substitui um trecho por outro.
+- Usei o método para corrigir o `y` de "Sanyos".
+- Entendi que ele troca **todas** as ocorrências, não apenas a primeira.
+- Fixei o risco: um `replace` mal escolhido pode alterar trechos que eu não queria mudar.
 
-### [`str.lower()`](https://docs.python.org/3/library/stdtypes.html#str.lower)
+## ⚠️ Métodos não alteram a variável original
 
-Converte a string para minúsculas. Muito usado para padronizar dados antes de comparar textos, já que `'Ana'` e `'ana'` são diferentes para o Python.
+- Este foi o ponto que mais mudou meu entendimento.
+- Entendi que os métodos **retornam** uma transformação, mas não a executam sobre o texto original.
+- Percebi que, mesmo depois de rodar `upper()`, `strip()` e `replace()`, a variável continuava igual.
+- Aprendi que isso acontece porque strings em Python são imutáveis.
+- Fixei que cada método devolve uma string nova, e o resultado se perde se eu não guardar.
 
-```python
-texto.lower()
-```
+## 🔗 Encadeando métodos
 
-### [`str.strip()`](https://docs.python.org/3/library/stdtypes.html#str.strip)
-
-Remove os espaços em branco do início e do fim da string. Não mexe nos espaços entre as palavras.
-
-```python
-texto.strip()
-```
-
-```
-'Geovana Alessandra dias Sanyos'
-```
-
-### [`str.replace(antigo, novo)`](https://docs.python.org/3/library/stdtypes.html#str.replace)
-
-Substitui **todas** as ocorrências de um trecho por outro. Aqui foi usado para corrigir o `y` de "Sanyos":
-
-```python
-texto.replace('y', 't')
-```
-
-```
-'  Geovana Alessandra dias Santos '
-```
-
-Atenção: por trocar todas as ocorrências, um `replace` mal escolhido pode alterar trechos indesejados do texto.
-
-## Observação importante: métodos não alteram a variável
-
-Este foi o ponto que mais mudou meu entendimento. Os métodos **retornam** uma transformação, mas não a executam sobre o texto original:
-
-```python
-texto
-```
-
-```
-'  Geovana Alessandra dias Sanyos '
-```
-
-Mesmo depois de rodar `upper()`, `strip()` e `replace()`, a variável continuou exatamente como estava. Isso acontece porque strings em Python são imutáveis — cada método devolve uma string nova, e o resultado se perde se não for guardado.
-
-## Encadeando métodos e guardando o resultado
-
-Como cada método devolve uma string, é possível chamar o próximo em sequência, na mesma linha. E para que a transformação valha de fato, o resultado é atribuído de volta à variável:
+- Aprendi que posso chamar um método sobre o resultado do anterior, na mesma linha.
+- Entendi que a leitura é da esquerda para a direita.
+- Fixei que preciso atribuir o resultado de volta à variável para a transformação valer.
 
 ```python
 texto = texto.strip().replace('y', 't').upper()
@@ -122,19 +85,25 @@ texto
 'GEOVANA ALESSANDRA DIAS SANTOS'
 ```
 
-A leitura é da esquerda para a direita: tira os espaços, depois corrige a letra, depois passa tudo para maiúsculas. Cada método atua sobre o resultado do anterior.
+- Acompanhei a ordem: tira os espaços, corrige a letra e depois passa tudo para maiúsculas.
 
----
-
-## O que ficou de aprendizado
+## 💡 Conceitos que fixei
 
 - Aspas simples e duplas são equivalentes para criar strings.
 - Método é chamado com `objeto.metodo()`.
 - `upper()`, `lower()`, `strip()` e `replace()` cobrem boa parte da limpeza básica de texto.
-- Strings são imutáveis: o método devolve uma cópia transformada e não altera a original.
-- Sem reatribuir (`texto = texto.strip()`), a transformação é descartada.
-- Métodos podem ser encadeados, executando na ordem em que aparecem.
+- `replace()` troca todas as ocorrências encontradas.
+- Strings são imutáveis: o método devolve uma cópia transformada.
+- Sem reatribuir, a transformação é descartada.
+- Métodos encadeados executam na ordem em que aparecem.
 
-## Referências
+## 🧾 Resumo final
 
-- [Métodos de string](https://docs.python.org/3/library/stdtypes.html#string-methods)
+Hoje trabalhei texto sujo até deixá-lo pronto para cadastro. O aprendizado central foi a imutabilidade: os métodos de string não mudam a variável, apenas devolvem uma versão transformada. Sem a reatribuição, o trabalho todo se perde. Também fixei o encadeamento como forma de aplicar várias transformações em sequência.
+
+## 🚧 Próximos passos
+
+- Estudar a coleta de dados com `input()`.
+- Entender por que o retorno do `input()` é sempre texto.
+- Aprender as funções de conversão entre tipos.
+- Conhecer as f-strings para formatar a saída.
