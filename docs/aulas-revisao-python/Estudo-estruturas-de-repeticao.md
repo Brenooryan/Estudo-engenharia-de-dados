@@ -1,5 +1,5 @@
 # Estudo — Estruturas de repetição
-**Data:** DD/MM/AAAA
+**Data:** 16/09/2026
 
 **Projeto:** Python para Data Science — [Alura](https://www.alura.com.br/)
 
