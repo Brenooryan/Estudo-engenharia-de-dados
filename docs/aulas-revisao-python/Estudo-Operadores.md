@@ -205,12 +205,11 @@ numeros.sort()
 print(f'Os números digitados em ordem crescente são: {numeros[0]}, {numeros[1]}, {numeros[2]}')
 ```
 
-## 🔢 Exercício — turnos
+## 🌅 Exercício — saudação conforme o turno
 
-- Aqui utilizei uma variavel resp para armazenar a `string()`.
-- Utilizei o `if()` para iniciar uma condição.
-- Usei o `in()` para verificar se a variável resp pertence a uma das condições.
-- Utilizei o `elif` adicionar mais condições ao código.
+- Usei o `in` com uma tupla de opções, em vez de comparar valor por valor com `or`.
+- Entendi que isso permite aceitar a resposta com e sem letra maiúscula.
+- Fixei que o `else` final cobre qualquer entrada fora do previsto.
 
 ```python
 resp = (input('Qual turno você esta?'))
@@ -225,11 +224,10 @@ else:
     print('Invalido!')
 ```
 
-## 🔢 Exercício — Verifica numero par
+## ➗ Operador de resto — `%`
 
-- Aqui utilizei uma variavel num para armazenar um `int()`.
-- Utilizei o `if()` para iniciar uma condição.
-- Usei o operador módulo `%` para criar um condição que quando o `num() / 2 der resto 0`, ele é par.
+- Aprendi o operador `%`, que devolve o resto da divisão.
+- Entendi que ele é a forma padrão de testar se um número é par: resto zero na divisão por 2.
 
 ```python
 num = int(input('Digite um número inteiro: '))
@@ -240,11 +238,8 @@ else:
     print('O número digitado é ímpar.')
 ```
 
-## 🔢 Exercício — Verifica decimal
-
-- Aqui utilizei uma variavel num para armazenar um `float()`.
-- Utilizei o `if()` para iniciar uma condição.
-- Usei o operador módulo `%` para criar um condição que quando o `num / 1` e resto diferente `!=` de 0, ele é decimal.
+- Usei a mesma ideia com `% 1` para descobrir se o número tem casa decimal.
+- Fixei o raciocínio: se sobra resto na divisão por 1, existe parte decimal.
 
 ```python
 num = float(input('Digite um número: '))
@@ -265,6 +260,8 @@ else:
 - O ternário resolve escolhas simples em uma linha.
 - Ternário aninhado funciona, mas o `if/elif/else` é mais legível.
 - `sort()` altera a lista original, e o índice começa em zero.
+- `in` também funciona com tupla de opções, evitando vários `or`.
+- `%` devolve o resto da divisão e serve para testar par, ímpar e parte decimal.
 
 ## 🧾 Resumo final
 
